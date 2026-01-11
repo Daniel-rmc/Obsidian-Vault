@@ -1,0 +1,8 @@
+# .gitignore
+.DS_Store
+.obsidian/workspace
+.obsidian/workspace-mobile.json
+.trash/
+*.mp4
+*.bag
+*.pth
