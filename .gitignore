@@ -1,6 +1,6 @@
 # .gitignore
 .DS_Store
-.obsidian/workspace
+.obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .trash/
 *.mp4
