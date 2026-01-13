@@ -605,9 +605,16 @@ HIL-SERL 默认动作只有四维（x，y，z）+gripper；扩展成 8 维度（
 
 左手： 427622274259
 
-
+重新编写了robot_controller，支持realman机器人，笛卡尔空间绝对位置，四元数的形式，进行控制。适配未来的训练策略。
 
 ## 1.13:
+解决了robot_record_vr流程中，ros控制节点和 robot_controller sdk 共同对机械臂进行控制的问题，sdk静止时会对误差噪声响应，左手手持续向某个位置安装10fps进行微小的漂移。
+同时，当数采时ros 节点控制采集数据时，sdk同时10fps进行loop控制，会导致数据采集时候有时候会抖动。
+
+在realman 机器人类中，添加了use_ros_controller 参数，指定当使用vr record时，跳过sdk的controller，controller只进行获取机械臂的states，控制是由Ros控制的。
+
+当replay 回放数据和使用record policy 进行推理时候，依旧使用sdk controller进行控制。兼容框架的其他机器人和功能。
+
 重新标定 左右手初始位置：
 
 右手：[5.875,-72.779,93.664,84.180,11.549,94.480,47.923]
@@ -701,4 +708,5 @@ lerobot-find-cameras realsense
 python Realman/test_send_action.py --arm left_arm --loop
 python Realman/test_send_action.py --arm right_arm --loop
 ```
+
 
