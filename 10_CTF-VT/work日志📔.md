@@ -5,8 +5,8 @@ export https_proxy="http://192.168.1.159:7890"
 export HTTP_PROXY="$http_proxy"
 export HTTPS_PROXY="$https_proxy"
 
-export http_proxy="http://10.29.244.11:7897"
-export https_proxy="http://10.29.244.11:7897"
+export http_proxy="http://10.29.109.77:7897"
+export https_proxy="http://10.29.109.77:7897"
 export HTTP_PROXY="$http_proxy"
 export HTTPS_PROXY="$https_proxy"
 
@@ -1773,4 +1773,4 @@ lerobot-train \
 
 后续工作日志📔见：
 
-[[HIL-SERL 配置流程]]
+[[Realman + lerobot 适配工作]]
